@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC5D9C5018D781FD00B2CCE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C4F18D781FD00B2CCE6 /* Foundation.framework */; };
+		EC5D9C5518D781FD00B2CCE6 /* BFStretchView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EC5D9C5418D781FD00B2CCE6 /* BFStretchView.h */; };
+		EC5D9C5718D781FD00B2CCE6 /* BFStretchView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5D9C5618D781FD00B2CCE6 /* BFStretchView.m */; };
+		EC5D9C5E18D781FD00B2CCE6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C5D18D781FD00B2CCE6 /* XCTest.framework */; };
+		EC5D9C5F18D781FD00B2CCE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C4F18D781FD00B2CCE6 /* Foundation.framework */; };
+		EC5D9C6118D781FD00B2CCE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C6018D781FD00B2CCE6 /* UIKit.framework */; };
+		EC5D9C6418D781FD00B2CCE6 /* libBFStretchView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C4C18D781FD00B2CCE6 /* libBFStretchView.a */; };
+		EC5D9C6A18D781FD00B2CCE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC5D9C6818D781FD00B2CCE6 /* InfoPlist.strings */; };
+		EC5D9C6C18D781FD00B2CCE6 /* BFStretchViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5D9C6B18D781FD00B2CCE6 /* BFStretchViewTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC5D9C6218D781FD00B2CCE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC5D9C4418D781FD00B2CCE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC5D9C4B18D781FD00B2CCE6;
+			remoteInfo = BFStretchView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC5D9C4A18D781FD00B2CCE6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				EC5D9C5518D781FD00B2CCE6 /* BFStretchView.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EC5D9C4C18D781FD00B2CCE6 /* libBFStretchView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBFStretchView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC5D9C4F18D781FD00B2CCE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC5D9C5318D781FD00B2CCE6 /* BFStretchView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BFStretchView-Prefix.pch"; sourceTree = "<group>"; };
+		EC5D9C5418D781FD00B2CCE6 /* BFStretchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFStretchView.h; sourceTree = "<group>"; };
+		EC5D9C5618D781FD00B2CCE6 /* BFStretchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFStretchView.m; sourceTree = "<group>"; };
+		EC5D9C5C18D781FD00B2CCE6 /* BFStretchViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BFStretchViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC5D9C5D18D781FD00B2CCE6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EC5D9C6018D781FD00B2CCE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EC5D9C6718D781FD00B2CCE6 /* BFStretchViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BFStretchViewTests-Info.plist"; sourceTree = "<group>"; };
+		EC5D9C6918D781FD00B2CCE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC5D9C6B18D781FD00B2CCE6 /* BFStretchViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFStretchViewTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC5D9C4918D781FD00B2CCE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5D9C5018D781FD00B2CCE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC5D9C5918D781FD00B2CCE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5D9C6418D781FD00B2CCE6 /* libBFStretchView.a in Frameworks */,
+				EC5D9C5E18D781FD00B2CCE6 /* XCTest.framework in Frameworks */,
+				EC5D9C6118D781FD00B2CCE6 /* UIKit.framework in Frameworks */,
+				EC5D9C5F18D781FD00B2CCE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC5D9C4318D781FD00B2CCE6 = {
+			isa = PBXGroup;
+			children = (
+				EC5D9C5118D781FD00B2CCE6 /* BFStretchView */,
+				EC5D9C6518D781FD00B2CCE6 /* BFStretchViewTests */,
+				EC5D9C4E18D781FD00B2CCE6 /* Frameworks */,
+				EC5D9C4D18D781FD00B2CCE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC5D9C4D18D781FD00B2CCE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC5D9C4C18D781FD00B2CCE6 /* libBFStretchView.a */,
+				EC5D9C5C18D781FD00B2CCE6 /* BFStretchViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC5D9C4E18D781FD00B2CCE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC5D9C4F18D781FD00B2CCE6 /* Foundation.framework */,
+				EC5D9C5D18D781FD00B2CCE6 /* XCTest.framework */,
+				EC5D9C6018D781FD00B2CCE6 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC5D9C5118D781FD00B2CCE6 /* BFStretchView */ = {
+			isa = PBXGroup;
+			children = (
+				EC5D9C5418D781FD00B2CCE6 /* BFStretchView.h */,
+				EC5D9C5618D781FD00B2CCE6 /* BFStretchView.m */,
+				EC5D9C5218D781FD00B2CCE6 /* Supporting Files */,
+			);
+			path = BFStretchView;
+			sourceTree = "<group>";
+		};
+		EC5D9C5218D781FD00B2CCE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC5D9C5318D781FD00B2CCE6 /* BFStretchView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC5D9C6518D781FD00B2CCE6 /* BFStretchViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC5D9C6B18D781FD00B2CCE6 /* BFStretchViewTests.m */,
+				EC5D9C6618D781FD00B2CCE6 /* Supporting Files */,
+			);
+			path = BFStretchViewTests;
+			sourceTree = "<group>";
+		};
+		EC5D9C6618D781FD00B2CCE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC5D9C6718D781FD00B2CCE6 /* BFStretchViewTests-Info.plist */,
+				EC5D9C6818D781FD00B2CCE6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC5D9C4B18D781FD00B2CCE6 /* BFStretchView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC5D9C6F18D781FD00B2CCE6 /* Build configuration list for PBXNativeTarget "BFStretchView" */;
+			buildPhases = (
+				EC5D9C4818D781FD00B2CCE6 /* Sources */,
+				EC5D9C4918D781FD00B2CCE6 /* Frameworks */,
+				EC5D9C4A18D781FD00B2CCE6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BFStretchView;
+			productName = BFStretchView;
+			productReference = EC5D9C4C18D781FD00B2CCE6 /* libBFStretchView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EC5D9C5B18D781FD00B2CCE6 /* BFStretchViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC5D9C7218D781FD00B2CCE6 /* Build configuration list for PBXNativeTarget "BFStretchViewTests" */;
+			buildPhases = (
+				EC5D9C5818D781FD00B2CCE6 /* Sources */,
+				EC5D9C5918D781FD00B2CCE6 /* Frameworks */,
+				EC5D9C5A18D781FD00B2CCE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC5D9C6318D781FD00B2CCE6 /* PBXTargetDependency */,
+			);
+			name = BFStretchViewTests;
+			productName = BFStretchViewTests;
+			productReference = EC5D9C5C18D781FD00B2CCE6 /* BFStretchViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC5D9C4418D781FD00B2CCE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Balazs Faludi";
+			};
+			buildConfigurationList = EC5D9C4718D781FD00B2CCE6 /* Build configuration list for PBXProject "BFStretchView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC5D9C4318D781FD00B2CCE6;
+			productRefGroup = EC5D9C4D18D781FD00B2CCE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC5D9C4B18D781FD00B2CCE6 /* BFStretchView */,
+				EC5D9C5B18D781FD00B2CCE6 /* BFStretchViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC5D9C5A18D781FD00B2CCE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5D9C6A18D781FD00B2CCE6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC5D9C4818D781FD00B2CCE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5D9C5718D781FD00B2CCE6 /* BFStretchView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC5D9C5818D781FD00B2CCE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5D9C6C18D781FD00B2CCE6 /* BFStretchViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC5D9C6318D781FD00B2CCE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC5D9C4B18D781FD00B2CCE6 /* BFStretchView */;
+			targetProxy = EC5D9C6218D781FD00B2CCE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC5D9C6818D781FD00B2CCE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC5D9C6918D781FD00B2CCE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC5D9C6D18D781FD00B2CCE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC5D9C6E18D781FD00B2CCE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC5D9C7018D781FD00B2CCE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/BFStretchView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BFStretchView/BFStretchView-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EC5D9C7118D781FD00B2CCE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/BFStretchView.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BFStretchView/BFStretchView-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EC5D9C7318D781FD00B2CCE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BFStretchView/BFStretchView-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BFStretchViewTests/BFStretchViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EC5D9C7418D781FD00B2CCE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BFStretchView/BFStretchView-Prefix.pch";
+				INFOPLIST_FILE = "BFStretchViewTests/BFStretchViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC5D9C4718D781FD00B2CCE6 /* Build configuration list for PBXProject "BFStretchView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC5D9C6D18D781FD00B2CCE6 /* Debug */,
+				EC5D9C6E18D781FD00B2CCE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC5D9C6F18D781FD00B2CCE6 /* Build configuration list for PBXNativeTarget "BFStretchView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC5D9C7018D781FD00B2CCE6 /* Debug */,
+				EC5D9C7118D781FD00B2CCE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EC5D9C7218D781FD00B2CCE6 /* Build configuration list for PBXNativeTarget "BFStretchViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC5D9C7318D781FD00B2CCE6 /* Debug */,
+				EC5D9C7418D781FD00B2CCE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC5D9C4418D781FD00B2CCE6 /* Project object */;
+}
