@@ -26,6 +26,8 @@
 	BFStretchView *stretchView = [[BFStretchView alloc] initWithFrame:frame];
 //	stretchView.contentSize = CGSizeMake(320, 548);
 //	stretchView.bouncesZoom = NO;
+	stretchView.minimumZoomScale = 1;
+	stretchView.maximumZoomScale = 2;
 	[self.view addSubview:stretchView];
 	
 	

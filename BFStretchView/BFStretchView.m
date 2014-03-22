@@ -127,6 +127,8 @@
 				_contentView.frame = CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height);
 			}];
 		}
+		
+		self.contentSize = _contentView.frame.size;
 		return;
 	}
 	
