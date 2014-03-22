@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BFStretchView.h"
+#import <BFDebugView.h>
 
 @interface ViewController ()
 
@@ -20,10 +21,18 @@
     [super viewDidLoad];
 
 	CGRect frame = CGRectMake(0, 20, 320, 548);
-	BFStretchView *view = [[BFStretchView alloc] initWithFrame:frame];
-
-	[self.view addSubview:view];
+	CGRect contentFrame = CGRectMake(0, 0, 320, 1000);
 	
+	BFStretchView *stretchView = [[BFStretchView alloc] initWithFrame:frame];
+//	stretchView.contentSize = CGSizeMake(320, 548);
+//	stretchView.bouncesZoom = NO;
+	[self.view addSubview:stretchView];
+	
+	
+	BFDebugView *debugView = [[BFDebugView alloc] initWithFrame:contentFrame];
+	[stretchView addSubview:debugView];
+	
+	stretchView.contentSize = debugView.frame.size;
 }
 
 - (void)didReceiveMemoryWarning

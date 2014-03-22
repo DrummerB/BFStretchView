@@ -19,7 +19,6 @@
 		EC5830FC18D783D20007B90A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5830FB18D783D20007B90A /* Images.xcassets */; };
 		EC58311718D783E40007B90A /* libBFStretchView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C4C18D781FD00B2CCE6 /* libBFStretchView.a */; };
 		EC58311A18D783F60007B90A /* BFStretchView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC58311918D783F60007B90A /* BFStretchView.m */; };
-		EC58311D18D784DE0007B90A /* BFStretchContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC58311C18D784DE0007B90A /* BFStretchContentView.m */; };
 		EC58312518D793850007B90A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC58312418D793850007B90A /* CFNetwork.framework */; };
 		EC58312718D7938B0007B90A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC58312618D7938B0007B90A /* QuartzCore.framework */; };
 		EC5D9C5018D781FD00B2CCE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C4F18D781FD00B2CCE6 /* Foundation.framework */; };
@@ -65,8 +64,6 @@
 		EC5830FB18D783D20007B90A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC58311818D783F60007B90A /* BFStretchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFStretchView.h; sourceTree = "<group>"; };
 		EC58311918D783F60007B90A /* BFStretchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFStretchView.m; sourceTree = "<group>"; };
-		EC58311B18D784DE0007B90A /* BFStretchContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFStretchContentView.h; sourceTree = "<group>"; };
-		EC58311C18D784DE0007B90A /* BFStretchContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFStretchContentView.m; sourceTree = "<group>"; };
 		EC58312418D793850007B90A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EC58312618D7938B0007B90A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EC5D9C4C18D781FD00B2CCE6 /* libBFStretchView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBFStretchView.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,8 +166,6 @@
 				EC5D9C5218D781FD00B2CCE6 /* Supporting Files */,
 				EC58311818D783F60007B90A /* BFStretchView.h */,
 				EC58311918D783F60007B90A /* BFStretchView.m */,
-				EC58311B18D784DE0007B90A /* BFStretchContentView.h */,
-				EC58311C18D784DE0007B90A /* BFStretchContentView.m */,
 				ECC7FD9318DE2370004712E3 /* UIGestureRecognizer+BFStretchView.h */,
 				ECC7FD9418DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m */,
 			);
@@ -314,7 +309,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC58311D18D784DE0007B90A /* BFStretchContentView.m in Sources */,
 				ECC7FD9518DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m in Sources */,
 				EC58311A18D783F60007B90A /* BFStretchView.m in Sources */,
 			);
@@ -352,6 +346,7 @@
 /* Begin XCBuildConfiguration section */
 		EC58311018D783D30007B90A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 544138374B4E49E290BAC6FC /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -376,6 +371,7 @@
 		};
 		EC58311118D783D30007B90A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 544138374B4E49E290BAC6FC /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

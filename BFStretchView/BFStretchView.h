@@ -16,5 +16,6 @@ typedef NS_ENUM(NSInteger, BFStretchViewDirection) {
 @interface BFStretchView : UIScrollView <UIScrollViewDelegate>
 
 @property (nonatomic) BFStretchViewDirection stretchDirection;
+@property (nonatomic) UIView *contentView;
 
 @end
