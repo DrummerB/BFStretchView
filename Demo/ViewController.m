@@ -28,6 +28,7 @@
 //	stretchView.bouncesZoom = NO;
 	stretchView.minimumZoomScale = 1;
 	stretchView.maximumZoomScale = 2;
+	stretchView.stretchDirection = BFStretchViewDirectionHorizontal;
 	[self.view addSubview:stretchView];
 	
 	

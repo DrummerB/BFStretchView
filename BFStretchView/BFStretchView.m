@@ -96,7 +96,7 @@
 		startCentroid = IsHorizontal ? (startPointA.x + startPointB.x) / 2 : (startPointA.y + startPointB.y) / 2;
 		startDistance = IsHorizontal ? startPointA.x - startPointB.x : startPointA.y - startPointB.y;;
 		startTransform = _contentView.transform;
-		startContentOffset = self.contentOffset.y;
+		startContentOffset = IsHorizontal ? self.contentOffset.x : self.contentOffset.y;
 		return;
 	}
 	
@@ -151,11 +151,16 @@
 	CGFloat scaledDiff = offsetDiff * scale;
 	
 	CGAffineTransform t = CGAffineTransformIdentity;
-	t.d = startTransform.d * scale;
+	if (IsHorizontal) {
+		t.a = startTransform.a * scale;
+	} else {
+		t.d = startTransform.d * scale;
+	}
 	_contentView.transform = t;
 	
 //	self.contentSize = _contentView.frame.size;
-	self.contentOffset = CGPointMake(self.contentOffset.x, scaledDiff - startCentroid - translation);
+	CGFloat offset = scaledDiff - startCentroid - translation;
+	self.contentOffset = IsHorizontal ? CGPointMake(offset, self.contentOffset.y) : CGPointMake(self.contentOffset.x, offset);
 	
 	_contentView.frame = CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height);
 
