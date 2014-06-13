@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9FF90034654241B1891500F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5160A872A45246A6B7A39C41 /* libPods.a */; };
+		6336D1EDE7454BE0A8B893E3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5160A872A45246A6B7A39C41 /* libPods.a */; };
 		EC5830E518D783D20007B90A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C4F18D781FD00B2CCE6 /* Foundation.framework */; };
 		EC5830E718D783D20007B90A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5830E618D783D20007B90A /* CoreGraphics.framework */; };
 		EC5830E818D783D20007B90A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C6018D781FD00B2CCE6 /* UIKit.framework */; };
@@ -18,10 +18,10 @@
 		EC5830FA18D783D20007B90A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5830F918D783D20007B90A /* ViewController.m */; };
 		EC5830FC18D783D20007B90A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5830FB18D783D20007B90A /* Images.xcassets */; };
 		EC58311718D783E40007B90A /* libBFStretchView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C4C18D781FD00B2CCE6 /* libBFStretchView.a */; };
-		EC58311A18D783F60007B90A /* BFStretchView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC58311918D783F60007B90A /* BFStretchView.m */; };
 		EC58312518D793850007B90A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC58312418D793850007B90A /* CFNetwork.framework */; };
 		EC58312718D7938B0007B90A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC58312618D7938B0007B90A /* QuartzCore.framework */; };
 		EC5D9C5018D781FD00B2CCE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C4F18D781FD00B2CCE6 /* Foundation.framework */; };
+		ECA1BD32194B7346003DBEAA /* BFStretchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA1BD31194B7346003DBEAA /* BFStretchView.m */; };
 		ECC7FD9518DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC7FD9418DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +62,6 @@
 		EC5830F818D783D20007B90A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EC5830F918D783D20007B90A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EC5830FB18D783D20007B90A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EC58311818D783F60007B90A /* BFStretchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFStretchView.h; sourceTree = "<group>"; };
-		EC58311918D783F60007B90A /* BFStretchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFStretchView.m; sourceTree = "<group>"; };
 		EC58312418D793850007B90A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EC58312618D7938B0007B90A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EC5D9C4C18D781FD00B2CCE6 /* libBFStretchView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBFStretchView.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +69,9 @@
 		EC5D9C5318D781FD00B2CCE6 /* BFStretchView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BFStretchView-Prefix.pch"; sourceTree = "<group>"; };
 		EC5D9C5D18D781FD00B2CCE6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EC5D9C6018D781FD00B2CCE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		ECA1BD2E194B633F003DBEAA /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		ECA1BD30194B7346003DBEAA /* BFStretchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFStretchView.h; sourceTree = "<group>"; };
+		ECA1BD31194B7346003DBEAA /* BFStretchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFStretchView.m; sourceTree = "<group>"; };
 		ECC7FD9318DE2370004712E3 /* UIGestureRecognizer+BFStretchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+BFStretchView.h"; sourceTree = "<group>"; };
 		ECC7FD9418DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+BFStretchView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +87,7 @@
 				EC5830E718D783D20007B90A /* CoreGraphics.framework in Frameworks */,
 				EC5830E818D783D20007B90A /* UIKit.framework in Frameworks */,
 				EC5830E518D783D20007B90A /* Foundation.framework in Frameworks */,
+				6336D1EDE7454BE0A8B893E3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +96,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC5D9C5018D781FD00B2CCE6 /* Foundation.framework in Frameworks */,
-				9FF90034654241B1891500F4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +119,7 @@
 		EC5830EA18D783D20007B90A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ECA1BD2E194B633F003DBEAA /* Reveal.framework */,
 				EC5830EB18D783D20007B90A /* Demo-Info.plist */,
 				EC5830EC18D783D20007B90A /* InfoPlist.strings */,
 				EC5830EF18D783D20007B90A /* main.m */,
@@ -164,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				EC5D9C5218D781FD00B2CCE6 /* Supporting Files */,
-				EC58311818D783F60007B90A /* BFStretchView.h */,
-				EC58311918D783F60007B90A /* BFStretchView.m */,
+				ECA1BD30194B7346003DBEAA /* BFStretchView.h */,
+				ECA1BD31194B7346003DBEAA /* BFStretchView.m */,
 				ECC7FD9318DE2370004712E3 /* UIGestureRecognizer+BFStretchView.h */,
 				ECC7FD9418DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m */,
 			);
@@ -187,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC58310F18D783D30007B90A /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
+				6C57228F86124C80B263A7E4 /* Check Pods Manifest.lock */,
 				EC5830E018D783D20007B90A /* Sources */,
 				EC5830E118D783D20007B90A /* Frameworks */,
 				EC5830E218D783D20007B90A /* Resources */,
+				3634236BA1C841D3AC283FA1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,11 +209,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC5D9C6F18D781FD00B2CCE6 /* Build configuration list for PBXNativeTarget "BFStretchView" */;
 			buildPhases = (
-				D5A398BF51674296A124EE44 /* Check Pods Manifest.lock */,
 				EC5D9C4818D781FD00B2CCE6 /* Sources */,
 				EC5D9C4918D781FD00B2CCE6 /* Frameworks */,
 				EC5D9C4A18D781FD00B2CCE6 /* CopyFiles */,
-				EBCE06000F8C4FD18F5D7C24 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,22 +264,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D5A398BF51674296A124EE44 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EBCE06000F8C4FD18F5D7C24 /* Copy Pods Resources */ = {
+		3634236BA1C841D3AC283FA1 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,6 +277,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C57228F86124C80B263A7E4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -310,7 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC7FD9518DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m in Sources */,
-				EC58311A18D783F60007B90A /* BFStretchView.m in Sources */,
+				ECA1BD32194B7346003DBEAA /* BFStretchView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +365,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Demo/Demo-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -460,7 +466,6 @@
 		};
 		EC5D9C7018D781FD00B2CCE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 544138374B4E49E290BAC6FC /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/BFStretchView.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -473,7 +478,6 @@
 		};
 		EC5D9C7118D781FD00B2CCE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 544138374B4E49E290BAC6FC /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/BFStretchView.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

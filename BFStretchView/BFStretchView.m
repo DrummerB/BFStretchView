@@ -1,50 +1,27 @@
 //
-//  BFStretchView.m
+//  BFStretchView2.m
 //  BFStretchView
 //
-//  Created by Balázs Faludi on 17.03.14.
+//  Created by Balázs Faludi on 13.06.14.
 //  Copyright (c) 2014 Balazs Faludi. All rights reserved.
 //
 
 #import "BFStretchView.h"
-#import "UIGestureRecognizer+BFStretchView.h"
-
-#define IsHorizontal (_stretchDirection == BFStretchViewDirectionHorizontal)
-#define IsVertical (_stretchDirection == BFStretchViewDirectionVertical)
-#define BoundsLength (IsHorizontal ? self.bounds.size.width : self.bounds.size.height)
-#define BoundsHeight (IsHorizonal ? self.bounds.size.height : self.bounds.size.width)
-#define ContentOffset (IsHorizontal ? self.contentOffset.x : self.contentOffset.y)
 
 @implementation BFStretchView {
-	// These values are set when the pinch gesture is first recognized.
-	CGFloat startCentroid;				// The point between the two fingers that initialted the pinch gesture. Used to get translation.
-	CGFloat startDistance;				// The distance between the two fingers. Used to calculate scaling.
-	CGAffineTransform startTransform;	// The transform that the _contentView had when the pinching started.
-	CGFloat startContentOffset;			// The content offset of the scroll view.
-	
-	CGFloat lastCentroid;				// Temporary storage for the centroid from the last movement. Used when the gesture ends.
+	UIView *zoomingView;
+	UIView *zoomProxyView;
 }
-
-#pragma mark - Initialization & Destruction
 
 - (void)setup {
-	_stretchDirection = BFStretchViewDirectionVertical;
-	
-	_contentView = [[UIView alloc] initWithFrame:self.bounds];
-	_contentView.backgroundColor = [UIColor redColor];
-	[super addSubview:_contentView];
-	
-	UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
-	[self addGestureRecognizer:pinchRecognizer];
-}
-
-- (id)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        [self setup];
-    }
-    return self;
+	self.delegate = self;
+	zoomProxyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 600, 0)];
+//	zoomProxyView.backgroundColor = [UIColor redColor];
+	zoomProxyView.hidden = YES;
+	[self addSubview:zoomProxyView];
+	[zoomProxyView addObserver:self forKeyPath:@"transform" options:0 context:nil];
+	[zoomProxyView addObserver:self forKeyPath:@"frame" options:0 context:nil];
+	self.backgroundColor = [UIColor greenColor];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -56,114 +33,50 @@
     return self;
 }
 
-#pragma mark - Getters & Setters
-
-- (void)setStretchDirection:(BFStretchViewDirection)stretchDirection {
-	if (_stretchDirection != stretchDirection) {
-		_stretchDirection = stretchDirection;
-	}
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self setup];
+    }
+    return self;
 }
 
-- (void)setContentSize:(CGSize)contentSize {
-	[super setContentSize:contentSize];
-	_contentView.frame = (CGRect){_contentView.frame.origin, contentSize};
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+	NSLog(@"zooming view");
+	zoomingView = self.subviews[1];
+	[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(stop:) userInfo:nil repeats:NO];
+	return zoomProxyView;
+
 }
 
-// Override addSubview to add any subviews to the contentView instead.
-- (void)addSubview:(UIView *)view {
-	[_contentView addSubview:view];
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
+	NSLog(@"will zoom");
+	
+}
+- (void)stop:(NSTimer*)timer {
+	NSLog(@"stop");
 }
 
-- (void)insertSubview:(UIView *)view aboveSubview:(UIView *)siblingSubview {
-	[_contentView insertSubview:view aboveSubview:siblingSubview];
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
+	NSLog(@"end zoom");
 }
 
-- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index {
-	[_contentView insertSubview:view atIndex:index];
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+	[self observeValueForKeyPath:nil ofObject:nil change:nil context:nil];
 }
 
-- (void)insertSubview:(UIView *)view belowSubview:(UIView *)siblingSubview {
-	[_contentView insertSubview:view belowSubview:siblingSubview];
-}
-
-#pragma mark - Zooming
-
-- (void)handlePinch:(UIPinchGestureRecognizer *)pinchRecognizer {
-
-	if (pinchRecognizer.state == UIGestureRecognizerStateBegan) {
-		CGPoint startPointA = [pinchRecognizer bf_locationOfTouch:0 inScrollView:self];
-		CGPoint startPointB = [pinchRecognizer bf_locationOfTouch:1 inScrollView:self];
-		startCentroid = IsHorizontal ? (startPointA.x + startPointB.x) / 2 : (startPointA.y + startPointB.y) / 2;
-		startDistance = IsHorizontal ? startPointA.x - startPointB.x : startPointA.y - startPointB.y;;
-		startTransform = _contentView.transform;
-		startContentOffset = IsHorizontal ? self.contentOffset.x : self.contentOffset.y;
-		return;
-	}
-	
-	if (pinchRecognizer.state == UIGestureRecognizerStateEnded || pinchRecognizer.state == UIGestureRecognizerStateCancelled) {
-		if (self.contentOffset.x < 0 || self.contentOffset.y < 0) {
-			[self setContentOffset:CGPointMake(0, 0) animated:YES];
-		}
-		CGAffineTransform t = _contentView.transform;
-		
-		CGFloat *scaleValue = IsHorizontal ? &(t.a) : &(t.d);
-		BOOL tooSmall = *scaleValue < self.minimumZoomScale;
-		BOOL tooBig = *scaleValue > self.maximumZoomScale;
-		if (tooSmall || tooBig) {
-			CGFloat limitingZoomScale = tooSmall ? self.minimumZoomScale : self.maximumZoomScale;
-
-			CGFloat offset = (startContentOffset + startCentroid) * limitingZoomScale - startCentroid;
-			if (tooSmall && offset < 0) offset = 0;
-			CGPoint contentOffset = IsHorizontal ? CGPointMake(offset, self.contentOffset.y)
-												 : CGPointMake(self.contentOffset.x, offset);
-			
-			
-			*scaleValue = limitingZoomScale;
-			[UIView animateWithDuration:0.3 animations:^{
-				_contentView.transform = t;
-				if (tooBig) {
-					self.contentOffset = contentOffset;
-				}
-				_contentView.frame = CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height);
-			}];
-		}
-		
-		self.contentSize = _contentView.frame.size;
-		return;
-	}
-	
-	if (pinchRecognizer.numberOfTouches < 2) return;
-
-	CGPoint pointA = [pinchRecognizer bf_locationOfTouch:0 inScrollView:self];
-	CGPoint pointB = [pinchRecognizer bf_locationOfTouch:1 inScrollView:self];
-
-	lastCentroid = IsHorizontal ? (pointA.x + pointB.x) / 2 : (pointA.y + pointB.y) / 2;
-	CGFloat translation = (lastCentroid - startCentroid);
-	
-	CGFloat nowDist = IsHorizontal ? pointA.x - pointB.x : pointA.y - pointB.y;
-	CGFloat scale = (nowDist / startDistance);
-
-	if (!self.bouncesZoom) {
-		scale = MIN(self.maximumZoomScale, MAX(self.minimumZoomScale, scale));
-	}
-	
-	CGFloat offsetDiff = startContentOffset + startCentroid;
-	CGFloat scaledDiff = offsetDiff * scale;
-	
-	CGAffineTransform t = CGAffineTransformIdentity;
-	if (IsHorizontal) {
-		t.a = startTransform.a * scale;
-	} else {
-		t.d = startTransform.d * scale;
-	}
-	_contentView.transform = t;
-	
-//	self.contentSize = _contentView.frame.size;
-	CGFloat offset = scaledDiff - startCentroid - translation;
-	self.contentOffset = IsHorizontal ? CGPointMake(offset, self.contentOffset.y) : CGPointMake(self.contentOffset.x, offset);
-	
-	_contentView.frame = CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height);
-
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+						change:(NSDictionary *)change
+					   context:(void *)context {
+	CGAffineTransform transform = CGAffineTransformMakeScale(self.zoomScale, 1);
+	zoomingView.transform = transform;
+	CGPoint center = zoomingView.center;
+	center.x = zoomProxyView.center.x;
+	center.y = self.contentOffset.y + zoomingView.bounds.size.height / 2;
+	zoomingView.center = center;
+//	zoomingView.frame = zoomProxyView.frame;
 }
 
 @end

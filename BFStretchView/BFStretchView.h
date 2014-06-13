@@ -2,7 +2,7 @@
 //  BFStretchView.h
 //  BFStretchView
 //
-//  Created by Balázs Faludi on 17.03.14.
+//  Created by Balázs Faludi on 13.06.14.
 //  Copyright (c) 2014 Balazs Faludi. All rights reserved.
 //
 
@@ -16,6 +16,5 @@ typedef NS_ENUM(NSInteger, BFStretchViewDirection) {
 @interface BFStretchView : UIScrollView <UIScrollViewDelegate>
 
 @property (nonatomic) BFStretchViewDirection stretchDirection;
-@property (nonatomic) UIView *contentView;
 
 @end
