@@ -15,8 +15,6 @@
 	UIView *_zoomProxyView;
 	BOOL _observingProxyView;
 	
-//	CGPoint initialPinchCentroid;
-//	CGPoint initialCenter;
 	CGPoint initialContentOffset;
 	BOOL pinching;
 	CGSize realContentSize;
@@ -29,8 +27,7 @@
 	_observingProxyView = NO;
 	pinching = NO;
 	_zoomProxyView = [[UIView alloc] initWithFrame:CGRectZero];
-//	_zoomProxyView.hidden = YES;
-	_zoomProxyView.backgroundColor = [UIColor redColor];
+	_zoomProxyView.hidden = YES;
 	[self addSubview:_zoomProxyView];
 }
 
@@ -100,10 +97,6 @@
 
 - (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
 	[self startObservingZoomProxyView];
-//	initialPinchCentroid = [self.pinchGestureRecognizer locationInView:self.superview];
-//	initialCenter = [self.superview convertPoint:_zoomedView.center fromView:self];
-//	initialPinchCentroid = [_zoomedView convertPoint:initialPinchCentroid fromView:self];
-//	NSLog(@"initial: %@", NSStringFromCGPoint(initialPinchCentroid));
 	initialContentOffset = self.contentOffset;
 	pinching = YES;
 	if ([_realDelegate respondsToSelector:_cmd]) {
@@ -121,7 +114,6 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 	[self observeValueForKeyPath:nil ofObject:nil change:nil context:nil];
-//	NSLog(@"offset: %@", NSStringFromCGPoint(self.contentOffset));
 	if ([_realDelegate respondsToSelector:_cmd]) {
 		[_realDelegate scrollViewDidScroll:scrollView];
 	}
@@ -147,47 +139,39 @@
 					  ofObject:(id)object
 						change:(NSDictionary *)change
 					   context:(void *)context {
-
-//	if (!pinching) return;
 	
-	CGSize contentSize = CGSizeMake(realContentSize.width, realContentSize.height / self.zoomScale);
-	[super setContentSize:contentSize];
+	BOOL isHorizontal = _stretchDirection == BFStretchViewDirectionHorizontal;
+	BOOL isZooming = self.pinchGestureRecognizer.state == UIGestureRecognizerStateBegan ||
+					 self.pinchGestureRecognizer.state == UIGestureRecognizerStateChanged ||
+					 self.pinchGestureRecognizer.state == UIGestureRecognizerStateCancelled ||
+					 self.pinchGestureRecognizer.state == UIGestureRecognizerStateEnded;
 	
-//	CGPoint centroid = [self.pinchGestureRecognizer locationInView:self.superview];
-//	CGPoint diff = CGPointMake(initialPinchCentroid.x - centroid.x, initialPinchCentroid.y - centroid.y);
-	
-//	CGPoint center = CGPointMake(initialCenter.x - diff.x, initialCenter.y - diff.y);
-//	center = [self.superview convertPoint:center toView:self];
-
-	CGAffineTransform transform = CGAffineTransformMakeScale(self.zoomScale, 1);
-	_zoomedView.transform = transform;
-	
-	CGFloat offset = (_zoomProxyView.frame.size.height - _zoomedView.frame.size.height) / 4;
-	
-	CGPoint center = _zoomedView.center;
-	center.x = _zoomProxyView.center.x;
-	center.y = _zoomedView.frame.size.height / 2;//-self.contentOffset.y / 8+ _zoomedView.frame.size.height / 2;
-	_zoomedView.center = center;
-	
+	CGSize contentSize = realContentSize;
+	CGAffineTransform transform = CGAffineTransformIdentity;
+	CGPoint origin;
 	CGPoint contentOffset = self.contentOffset;
-	if (self.pinchGestureRecognizer.state == UIGestureRecognizerStateBegan || self.pinchGestureRecognizer.state == UIGestureRecognizerStateChanged || self.pinchGestureRecognizer.state == UIGestureRecognizerStateCancelled || self.pinchGestureRecognizer.state == UIGestureRecognizerStateEnded)
-		contentOffset.y = initialContentOffset.y;
+	
+	if (isHorizontal) {
+		contentSize.height /= self.zoomScale;
+		transform = CGAffineTransformMakeScale(self.zoomScale, 1);
+		origin = CGPointMake(_zoomProxyView.frame.origin.x, 0);
+		if (isZooming) {
+			contentOffset.y = initialContentOffset.y;
+		}
+	} else {
+		contentSize.width /= self.zoomScale;
+		transform = CGAffineTransformMakeScale(1, self.zoomScale);
+		origin = CGPointMake(0, _zoomProxyView.frame.origin.y);
+		if (isZooming) {
+			contentOffset.x = initialContentOffset.x;
+		}
+	}
+	
+	[super setContentSize:contentSize];
+	_zoomedView.transform = transform;
+	_zoomedView.frame = (CGRect){origin, _zoomedView.frame.size};
 	self.contentOffset = contentOffset;
 	
-//	CGRect frame = _zoomedView.frame;
-//	frame.origin.x = _zoomProxyView.frame.origin.x;
-//	frame.origin.y = 0;
-//	_zoomedView.frame = frame;
-	
-//	NSLog(@"diff: %@", NSStringFromCGPoint(diff));
-	
-//	center.y = centroid.y - initialPinchCentroid.y + roundf(_zoomedView.frame.size.height / 2;
-    // self.contentOffset.y + _zoomedView.bounds.size.height / 2;
-	
-//	CGAffineTransform transform = _zoomProxyView.transform;
-//	transform.d = 1.0;
-//	_zoomedView.transform = transform;
-//	_zoomedView.frame = _zoomProxyView.frame;
 }
 
 - (void)setContentSize:(CGSize)contentSize {
