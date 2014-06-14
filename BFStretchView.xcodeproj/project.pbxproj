@@ -22,7 +22,6 @@
 		EC58312718D7938B0007B90A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC58312618D7938B0007B90A /* QuartzCore.framework */; };
 		EC5D9C5018D781FD00B2CCE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5D9C4F18D781FD00B2CCE6 /* Foundation.framework */; };
 		ECA1BD32194B7346003DBEAA /* BFStretchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA1BD31194B7346003DBEAA /* BFStretchView.m */; };
-		ECC7FD9518DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC7FD9418DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +71,6 @@
 		ECA1BD2E194B633F003DBEAA /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		ECA1BD30194B7346003DBEAA /* BFStretchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFStretchView.h; sourceTree = "<group>"; };
 		ECA1BD31194B7346003DBEAA /* BFStretchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFStretchView.m; sourceTree = "<group>"; };
-		ECC7FD9318DE2370004712E3 /* UIGestureRecognizer+BFStretchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+BFStretchView.h"; sourceTree = "<group>"; };
-		ECC7FD9418DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+BFStretchView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +165,6 @@
 				EC5D9C5218D781FD00B2CCE6 /* Supporting Files */,
 				ECA1BD30194B7346003DBEAA /* BFStretchView.h */,
 				ECA1BD31194B7346003DBEAA /* BFStretchView.m */,
-				ECC7FD9318DE2370004712E3 /* UIGestureRecognizer+BFStretchView.h */,
-				ECC7FD9418DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m */,
 			);
 			path = BFStretchView;
 			sourceTree = "<group>";
@@ -311,7 +306,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECC7FD9518DE2370004712E3 /* UIGestureRecognizer+BFStretchView.m in Sources */,
 				ECA1BD32194B7346003DBEAA /* BFStretchView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
