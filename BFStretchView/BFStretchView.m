@@ -1,5 +1,5 @@
 //
-//  BFStretchView2.m
+//  BFStretchView.m
 //  BFStretchView
 //
 //  Created by Balázs Faludi on 13.06.14.
