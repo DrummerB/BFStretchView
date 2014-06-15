@@ -11,6 +11,7 @@
 
 @implementation BFStretchView {
 	id<UIScrollViewDelegate> _realDelegate;
+	
 	UIView *_zoomedView;
 	UIView *_zoomProxyView;
 	BOOL _observingProxyView;
@@ -78,19 +79,9 @@
 #pragma mark - UIScrollViewDelegate
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-	static BOOL first = YES;
 	if ([_realDelegate respondsToSelector:_cmd]) {
-		UIView *view = [_realDelegate viewForZoomingInScrollView:scrollView];
-		_zoomedView = view;
-		if (_zoomedView) {
-			[self stopObservingZoomProxyView];
-			if (first) {
-				_zoomProxyView.frame = _zoomedView.frame;
-				first = NO;
-			}
-			[self startObservingZoomProxyView];
-			return _zoomProxyView;
-		}
+		_zoomedView = [_realDelegate viewForZoomingInScrollView:scrollView];
+		return _zoomedView;
 	}
 	return nil;
 }
@@ -99,6 +90,9 @@
 	[self startObservingZoomProxyView];
 	initialContentOffset = self.contentOffset;
 	pinching = YES;
+	[self stopObservingZoomProxyView];
+	_zoomProxyView.frame = _zoomedView.frame;
+	[self startObservingZoomProxyView];
 	if ([_realDelegate respondsToSelector:_cmd]) {
 		[_realDelegate scrollViewWillBeginZooming:scrollView withView:view];
 	}
@@ -142,9 +136,9 @@
 	
 	BOOL isHorizontal = _stretchDirection == BFStretchViewDirectionHorizontal;
 	BOOL isZooming = self.pinchGestureRecognizer.state == UIGestureRecognizerStateBegan ||
-					 self.pinchGestureRecognizer.state == UIGestureRecognizerStateChanged ||
-					 self.pinchGestureRecognizer.state == UIGestureRecognizerStateCancelled ||
-					 self.pinchGestureRecognizer.state == UIGestureRecognizerStateEnded;
+	self.pinchGestureRecognizer.state == UIGestureRecognizerStateChanged ||
+	self.pinchGestureRecognizer.state == UIGestureRecognizerStateCancelled ||
+	self.pinchGestureRecognizer.state == UIGestureRecognizerStateEnded;
 	
 	CGSize contentSize = realContentSize;
 	CGAffineTransform transform = CGAffineTransformIdentity;
